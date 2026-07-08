@@ -7,3 +7,11 @@
   background-repeat: no-repeat;
   padding: 30px;
 }
+ 
+* {
+  box-sizing: border-box;
+}
+ 
+body {
+  margin: 0;
+}
