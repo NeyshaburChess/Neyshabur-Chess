@@ -1,54 +1,111 @@
-export default function ArticlesPage() {
-  const articles = [
-    {
-      title: "تاریخچه شطرنج؛ از هند تا جهان امروز",
-      text: "شطرنج یکی از قدیمی‌ترین بازی‌های فکری جهان است که مسیر طولانی را از هند باستان تا تبدیل شدن به یک ورزش جهانی طی کرده است.",
-    },
-    {
-      title: "اهمیت آموزش شطرنج در رشد فکری کودکان",
-      text: "آموزش شطرنج می‌تواند به تقویت تمرکز، قدرت تصمیم‌گیری، صبر و مهارت حل مسئله در کودکان کمک کند.",
-    },
-    {
-      title: "اصول اولیه شروع بازی برای بازیکنان تازه‌کار",
-      text: "کنترل مرکز، توسعه سریع مهره‌ها، حفظ امنیت شاه و داشتن برنامه مناسب از مهم‌ترین اصول شروع بازی هستند.",
-    },
-    {
-      title: "چگونه برنامه تمرینی مناسب برای پیشرفت در شطرنج داشته باشیم؟",
-      text: "تمرین تاکتیک‌ها، بررسی بازی‌های بزرگان، تحلیل بازی‌های شخصی و مطالعه آخر بازی‌ها از عوامل مهم پیشرفت هستند.",
-    },
-    {
-      title: "اشتباهات رایج بازیکنان آماتور در مسابقات",
-      text: "عجله در حرکت، توجه نکردن به تهدیدهای حریف و مدیریت ضعیف زمان از اشتباهات رایج بازیکنان است.",
-    },
-    {
-      title: "اهمیت مسابقات رسمی و ریتد در پیشرفت شطرنج‌بازان",
-      text: "شرکت در مسابقات رسمی باعث افزایش تجربه، آشنایی با فضای رقابت و رشد سطح بازی شطرنج‌بازان می‌شود.",
-    },
-  ];
+import Link from "next/link";
  
+const articles = [
+  {
+    title: "تاریخچه شطرنج؛ از هند تا جهان امروز",
+    description:
+      "آشنایی با تاریخچه شطرنج، مسیر گسترش آن در جهان و روند شکل‌گیری قوانین امروزی.",
+    link: "/articles/chess-history",
+  },
+  {
+    title: "اهمیت آموزش شطرنج در رشد فکری کودکان",
+    description:
+      "بررسی تأثیر شطرنج بر افزایش تمرکز، حافظه، خلاقیت و مهارت حل مسئله در کودکان.",
+    link: "/articles/children-chess",
+  },
+  {
+    title: "اصول اولیه شروع بازی برای بازیکنان تازه‌کار",
+    description:
+      "مهم‌ترین اصول آغاز بازی شامل کنترل مرکز، توسعه مهره‌ها، امنیت شاه و اشتباهات رایج.",
+    link: "/articles/opening-principles",
+  },
+  {
+    title: "چگونه برنامه تمرینی مناسب برای پیشرفت در شطرنج داشته باشیم؟",
+    description:
+      "راهنمای جامع برنامه‌ریزی تمرین روزانه برای افزایش قدرت بازی و پیشرفت مستمر.",
+    link: "/articles/training-plan",
+  },
+  {
+    title: "اشتباهات رایج بازیکنان آماتور در مسابقات",
+    description:
+      "اشتباهاتی که باعث از دست رفتن امتیاز می‌شوند و راهکارهایی برای جلوگیری از آن‌ها.",
+    link: "/articles/common-mistakes",
+  },
+  {
+    title: "اهمیت مسابقات رسمی و ریتد در پیشرفت شطرنج‌بازان",
+    description:
+      "نقش مسابقات رسمی در افزایش تجربه، کسب ریتینگ و پیشرفت بازیکنان.",
+    link: "/articles/rated-tournaments",
+  },
+];
+ 
+export default function ArticlesPage() {
   return (
-    <main style={{ padding: "40px", maxWidth: "900px", margin: "0 auto" }}>
-      <h1 style={{ textAlign: "center", marginBottom: "30px" }}>
+    <main
+      style={{
+        maxWidth: "1000px",
+        margin: "0 auto",
+        padding: "40px 20px",
+      }}
+    >
+      <h1
+        style={{
+          textAlign: "center",
+          marginBottom: "40px",
+          fontSize: "2.2rem",
+        }}
+      >
         مقالات شطرنج
       </h1>
  
-      <div style={{ display: "grid", gap: "20px" }}>
+      <div
+        style={{
+          display: "grid",
+          gap: "25px",
+        }}
+      >
         {articles.map((article, index) => (
           <div
             key={index}
             style={{
-              padding: "20px",
-              borderRadius: "15px",
-              background: "#ffffff",
-              boxShadow: "0 4px 15px rgba(0,0,0,0.1)",
+              border: "1px solid #ddd",
+              borderRadius: "12px",
+              padding: "24px",
+              backgroundColor: "#fff",
+              boxShadow: "0 3px 10px rgba(0,0,0,0.08)",
             }}
           >
-            <h2>{article.title}</h2>
-            <p>{article.text}</p>
+            <h2 style={{ marginBottom: "12px" }}>
+              {article.title}
+            </h2>
+ 
+            <p
+              style={{
+                color: "#555",
+                lineHeight: "1.8",
+                marginBottom: "20px",
+              }}
+            >
+              {article.description}
+            </p>
+ 
+            <Link
+              href={article.link}
+              style={{
+                display: "inline-block",
+                backgroundColor: "#0f172a",
+                color: "#fff",
+                padding: "10px 18px",
+                borderRadius: "8px",
+                textDecoration: "none",
+                fontWeight: "bold",
+              }}
+            >
+              مطالعه مقاله
+            </Link>
           </div>
         ))}
       </div>
     </main>
   );
 }
-  

@@ -312,18 +312,18 @@ export default function Home() {
         >
           {[
             {
-              title: "بیست و نهمین دوره مسابقات سریع",
-              date: "۱۹ تیر ۱۴۰۵",
+              title: "کسب مقام سوم کشوری توسط ثنا شادان‌پور",
+              date: "۱۴۰۵",
               image: "/news/news1.jpg",
             },
             {
-              title: "شروع ثبت نام کلاس های تابستان",
-              date: "۲۰ تیر ۱۴۰۵",
+              title: "برگزاری مسابقه شطرنج در روز بزرگداشت خیام",
+              date: "۱۴۰۵",
               image: "/news/news2.jpg",
             },
             {
-              title: "انتشار آخرین قوانین فیده",
-              date: "۲۲ تیر ۱۴۰۵",
+              title: "برگزاری مسابقه هفتگی شطرنج در باغ ملی",
+              date: "۱۴۰۵",
               image: "/news/news3.jpg",
             },
           ].map((news) => (
@@ -371,8 +371,28 @@ export default function Home() {
               </div>
             </div>
           ))}
-        </div>
-      </section>
+      </div>
+ 
+<div style={{ textAlign: "center", marginTop: "35px" }}>
+  <a
+    href="/news"
+    style={{
+      display: "inline-block",
+      padding: "12px 24px",
+      background: "#D4AF37",
+      color: "#001F3F",
+      borderRadius: "10px",
+      textDecoration: "none",
+      fontWeight: "bold",
+    }}
+  >
+    مشاهده همه اخبار
+  </a>
+</div>
+ 
+</section>
+
+      
 
       {/* 
  
