@@ -23,3 +23,4 @@ export default function ChessBoard({ position }: ChessBoardProps) {
     </div>
   );
 }
+
