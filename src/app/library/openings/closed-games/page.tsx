@@ -2,185 +2,223 @@ import Link from "next/link";
  
 const openings = [
   {
-    title: "Queen's Gambit",
-    subtitle: "گامبی وزیر",
-    moves: "1.d4 d5 2.c4",
-    eco: "D06-D69",
-    difficulty: "⭐⭐⭐⭐⭐",
-    href: "/library/openings/closed-games/queens-gambit",
+    id: "sicilian-defense",
+    name: "دفاع سیسیلی",
+    english: "Sicilian Defense",
+    moves: "1. e4 c5",
+    description:
+      "یکی از محبوب‌ترین دفاع‌ها در برابر حرکت e4 با ساختارهای پیچیده و تهاجمی.",
   },
+ 
   {
-    title: "Slav Defense",
-    subtitle: "دفاع اسلاو",
-    moves: "1.d4 d5 2.c4 c6",
-    eco: "D10-D19",
-    difficulty: "⭐⭐⭐⭐☆",
-    href: "/library/openings/closed-games/slav-defense",
+    id: "ruy-lopez",
+    name: "بازی اسپانیایی",
+    english: "Ruy Lopez",
+    moves: "1. e4 e5 2. Nf3 Nc6 3. Bb5",
+    description:
+      "یکی از قدیمی‌ترین و عمیق‌ترین شروع‌های کلاسیک شطرنج.",
   },
+ 
   {
-    title: "King's Indian Defense",
-    subtitle: "دفاع هندی شاه",
-    moves: "1.d4 Nf6 2.c4 g6",
-    eco: "E60-E99",
-    difficulty: "⭐⭐⭐⭐⭐",
-    href: "/library/openings/closed-games/kings-indian-defense",
+    id: "italian-game",
+    name: "بازی ایتالیایی",
+    english: "Italian Game",
+    moves: "1. e4 e5 2. Nf3 Nc6 3. Bc4",
+    description:
+      "شروعی مناسب برای یادگیری توسعه سریع مهره‌ها و حمله.",
   },
+ 
   {
-    title: "Nimzo-Indian Defense",
-    subtitle: "دفاع نیمزو هندی",
-    moves: "1.d4 Nf6 2.c4 e6 3.Nc3 Bb4",
-    eco: "E20-E59",
-    difficulty: "⭐⭐⭐⭐⭐",
-    href: "/library/openings/closed-games/nimzo-indian-defense",
+    id: "queens-gambit",
+    name: "گامبی وزیر",
+    english: "Queen's Gambit",
+    moves: "1. d4 d5 2. c4",
+    description:
+      "شروعی مشهور برای کنترل مرکز صفحه.",
   },
+ 
   {
-    title: "Grünfeld Defense",
-    subtitle: "دفاع گرونفلد",
-    moves: "1.d4 Nf6 2.c4 g6 3.Nc3 d5",
-    eco: "D70-D99",
-    difficulty: "⭐⭐⭐⭐⭐",
-    href: "/library/openings/closed-games/grunfeld-defense",
+    id: "french-defense",
+    name: "دفاع فرانسوی",
+    english: "French Defense",
+    moves: "1. e4 e6",
+    description:
+      "دفاعی محکم با ساختار پیاده‌ای خاص.",
+  },
+ 
+  {
+    id: "caro-kann-defense",
+    name: "دفاع کاروکان",
+    english: "Caro-Kann Defense",
+    moves: "1. e4 c6",
+    description:
+      "دفاعی سالم و محبوب برای سیاه.",
+  },
+ 
+  {
+    id: "king-indian-defense",
+    name: "هندی شاه",
+    english: "King's Indian Defense",
+    moves: "1. d4 Nf6 2. c4 g6",
+    description:
+      "شروعی تهاجمی با حمله‌های پیچیده.",
+  },
+ 
+  {
+    id: "nimzo-indian-defense",
+    name: "نیمزو هندی",
+    english: "Nimzo-Indian Defense",
+    moves: "1. d4 Nf6 2. c4 e6 3. Nc3 Bb4",
+    description:
+      "یکی از بهترین پاسخ‌ها مقابل d4.",
+  },
+ 
+  {
+    id: "grunfeld-defense",
+    name: "دفاع گرونفلد",
+    english: "Grunfeld Defense",
+    moves: "1. d4 Nf6 2. c4 g6 3. Nc3 d5",
+    description:
+      "دفاعی فعال برای مبارزه با مرکز.",
+  },
+ 
+  {
+    id: "slav-defense",
+    name: "دفاع اسلاو",
+    english: "Slav Defense",
+    moves: "1. d4 d5 2. c4 c6",
+    description:
+      "شروعی محکم و قابل اعتماد.",
+  },
+ 
+  {
+    id: "english-opening",
+    name: "شروع انگلیسی",
+    english: "English Opening",
+    moves: "1. c4",
+    description:
+      "شروعی انعطاف‌پذیر با کنترل جناح وزیر.",
+  },
+ 
+  {
+    id: "reti-opening",
+    name: "شروع رتی",
+    english: "Reti Opening",
+    moves: "1. Nf3",
+    description:
+      "شروع مدرن با کنترل مرکز از فاصله دور.",
+  },
+ 
+  {
+    id: "bird-opening",
+    name: "شروع برد",
+    english: "Bird Opening",
+    moves: "1. f4",
+    description:
+      "شروع غیرمعمول و تهاجمی.",
   },
 ];
  
-export default function ClosedGamesPage() {
+ 
+export default function OpeningsPage() {
   return (
     <main
       style={{
-        maxWidth: 1250,
+        padding: 30,
+        maxWidth: 1100,
         margin: "0 auto",
-        padding: "30px",
       }}
     >
+ 
       <h1
         style={{
           textAlign: "center",
-          marginBottom: 10,
+          marginBottom: 20,
         }}
       >
-        Closed Games
+        شروع‌های بازی شطرنج
       </h1>
+ 
  
       <p
         style={{
           textAlign: "center",
           color: "#666",
-          fontSize: 18,
-          marginBottom: 40,
         }}
       >
-        خانواده شروع‌هایی که معمولاً با
-        <strong> 1.d4 </strong>
-        آغاز می‌شوند و بر پایه کنترل مرکز، بازی‌های موقعیتی و برنامه‌های
-        بلندمدت شکل می‌گیرند.
+        بررسی افتتاحیه‌ها، حرکات اصلی و نمایش بازی
       </p>
+ 
  
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fit,minmax(320px,1fr))",
-          gap: 25,
+          gridTemplateColumns:
+            "repeat(auto-fit,minmax(280px,1fr))",
+          gap: 20,
+          marginTop: 40,
         }}
       >
+ 
         {openings.map((opening) => (
-          <Link
-            key={opening.title}
-            href={opening.href}
+ 
+          <div
+            key={opening.id}
             style={{
-              textDecoration: "none",
-              color: "inherit",
+              border: "1px solid #ddd",
+              borderRadius: 15,
+              padding: 20,
+              background: "#fff",
             }}
           >
-            <div
+ 
+            <h2>
+              {opening.name}
+            </h2>
+ 
+ 
+            <h3
               style={{
-                border: "1px solid #ddd",
-                borderRadius: 15,
-                padding: 22,
-                background: "#fff",
-                transition: "0.2s",
-                cursor: "pointer",
-                height: "100%",
+                color: "#777",
+                fontSize: 16,
               }}
             >
-              <h2>{opening.title}</h2>
+              {opening.english}
+            </h3>
  
-              <p
-                style={{
-                  color: "#666",
-                  marginBottom: 15,
-                }}
-              >
-                {opening.subtitle}
-              </p>
  
-              <p>
-                <strong>حرکت آغازین</strong>
-              </p>
+            <p>
+              حرکت شروع:
+              <br />
+              <b>{opening.moves}</b>
+            </p>
  
-              <code
-                style={{
-                  fontSize: 16,
-                }}
-              >
-                {opening.moves}
-              </code>
  
-              <p
-                style={{
-                  marginTop: 18,
-                }}
-              >
-                <strong>ECO:</strong> {opening.eco}
-              </p>
+            <p>
+              {opening.description}
+            </p>
  
-              <p>
-                <strong>درجه سختی:</strong> {opening.difficulty}
-              </p>
  
+            <Link href={`/library/openings/${opening.id}`}>
               <button
                 style={{
-                  marginTop: 20,
-                  width: "100%",
-                  padding: 12,
+                  marginTop: 15,
+                  padding: "10px 20px",
                   borderRadius: 8,
                   border: "none",
                   cursor: "pointer",
-                  fontSize: 15,
                 }}
               >
-                ورود به صفحه شروع بازی
+                مشاهده شروع بازی ♟
               </button>
-            </div>
-          </Link>
+            </Link>
+ 
+          </div>
+ 
         ))}
+ 
       </div>
  
-      <section
-        style={{
-          marginTop: 60,
-        }}
-      >
-        <h2>درباره Closed Games</h2>
- 
-        <p>
-          شروع‌های بسته معمولاً با <b>1.d4</b> آغاز می‌شوند و نسبت به بازی‌های
-          باز، ماهیتی آرام‌تر و استراتژیک‌تر دارند. در این نوع بازی‌ها کنترل
-          خانه‌های مرکزی، ساختار پیاده‌ها و برنامه‌ریزی بلندمدت اهمیت زیادی
-          دارد.
-        </p>
- 
-        <p>
-          بسیاری از قهرمانان جهان مانند
-          <b> کارپف، آناند، کارلسن، کاسپاروف و کرامنیک </b>
-          بارها از این شروع‌ها در مسابقات سطح اول جهان استفاده کرده‌اند.
-        </p>
- 
-        <p>
-          در این بخش می‌توانید با مهم‌ترین شروع‌های بسته آشنا شوید، فایل PGN
-          هر کدام را دانلود کنید و بازی نمونه را روی صفحه شطرنج به‌صورت
-          تعاملی حرکت به حرکت بررسی کنید.
-        </p>
-      </section>
     </main>
   );
 }
